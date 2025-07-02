@@ -73,3 +73,18 @@ function makeSound(key) {
       console.log(key);
   }
 }
+// Function to add and remove animation effect on the button
+function buttonAnimation(currentKey) {
+
+  // Select the button element that has a class matching the current key (e.g., "w", "a", etc.)
+  var activeButton = document.querySelector("." + currentKey);
+
+  // Add the "pressed" class to the selected button to apply the pressed animation (via CSS)
+  activeButton.classList.add("pressed");
+
+  // Use setTimeout to remove the "pressed" class after 100 milliseconds (so it looks like a quick press effect)
+  setTimeout(function() {
+    activeButton.classList.remove("pressed");
+  }, 100);
+
+}
